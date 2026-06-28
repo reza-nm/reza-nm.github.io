@@ -96,9 +96,9 @@
                 </div>
                 <!-- Before/After Browser Toggle -->
                 <div class="mt-20 relative mx-auto max-w-md opacity-0 animate-fade-up" style="animation-delay: 0.5s;">
-                    <div id="before-after-card" class="bg-forest2 rounded-2xl border border-hairlineDark shadow-2xl p-4 w-full max-w-sm">
+                    <div id="before-after-card" class="before-after-card bg-forest2 rounded-2xl border border-hairlineDark p-4 w-full max-w-sm">
                         <!-- Browser Chrome -->
-                        <div class="flex items-center justify-between mb-4">
+                        <div class="flex items-center justify-between pb-3 mb-4 border-b border-hairlineDark">
                             <div class="flex items-center gap-1.5">
                                 <span class="w-3 h-3 rounded-full bg-red-400"></span>
                                 <span class="w-3 h-3 rounded-full bg-yellow-400"></span>
@@ -114,25 +114,27 @@
 
                         <!-- Toggle Buttons -->
                         <div class="flex gap-2 mb-6">
-                            <button id="before-btn" class="before-after-btn flex-1 rounded-full text-cream/80 py-2 px-4 text-sm font-medium transition-all">Before</button>
-                            <button id="after-btn" class="before-after-btn flex-1 rounded-full text-cream/80 hover:text-cream py-2 px-4 text-sm font-medium transition-all">After</button>
+                            <button id="before-btn" class="before-after-btn active flex-1 rounded-full py-2 px-4 text-sm font-medium transition-all">Before</button>
+                            <button id="after-btn" class="before-after-btn flex-1 rounded-full py-2 px-4 text-sm font-medium transition-all">After</button>
                         </div>
 
                         <!-- Content Area -->
-                        <div id="before-content" class="before-after-content">
-                            <ul class="space-y-3 text-sm">
-                                <li class="flex items-center gap-2"><span class="text-coral">✕</span><span class="text-cream/90">Hard to trust</span></li>
-                                <li class="flex items-center gap-2"><span class="text-coral">✕</span><span class="text-cream/90">Visitors leave confused</span></li>
-                                <li class="flex items-center gap-2"><span class="text-coral">✕</span><span class="text-cream/90">Revenue left on the table</span></li>
-                            </ul>
-                        </div>
+                        <div class="ba-content-wrapper relative">
+                            <div id="before-content" class="before-after-content">
+                                <ul class="space-y-3 text-sm">
+                                    <li class="flex items-center gap-2"><span class="text-coral">✕</span><span class="text-cream/90">Hard to trust</span></li>
+                                    <li class="flex items-center gap-2"><span class="text-coral">✕</span><span class="text-cream/90">Visitors leave confused</span></li>
+                                    <li class="flex items-center gap-2"><span class="text-coral">✕</span><span class="text-cream/90">Revenue left on the table</span></li>
+                                </ul>
+                            </div>
 
-                        <div id="after-content" class="before-after-content hidden">
-                            <ul class="space-y-3 text-sm">
-                                <li class="flex items-center gap-2"><span class="text-gold">✓</span><span class="text-cream font-medium">Easy to trust</span></li>
-                                <li class="flex items-center gap-2"><span class="text-gold">✓</span><span class="text-cream font-medium">Customer likes it</span></li>
-                                <li class="flex items-center gap-2"><span class="text-gold">✓</span><span class="text-cream font-medium">Gets more revenue</span></li>
-                            </ul>
+                            <div id="after-content" class="before-after-content inactive">
+                                <ul class="space-y-3 text-sm">
+                                    <li class="flex items-center gap-2"><span class="text-gold">✓</span><span class="text-cream font-medium">Easy to trust</span></li>
+                                    <li class="flex items-center gap-2"><span class="text-gold">✓</span><span class="text-cream font-medium">Customer likes it</span></li>
+                                    <li class="flex items-center gap-2"><span class="text-gold">✓</span><span class="text-cream font-medium">Gets more revenue</span></li>
+                                </ul>
+                            </div>
                         </div>
                     </div>
                 </div>

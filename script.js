@@ -195,23 +195,50 @@
             // Show Before state
             beforeBtn.classList.add('active');
             afterBtn.classList.remove('active');
-            beforeContent.classList.remove('hidden');
-            afterContent.classList.add('hidden');
+            beforeContent.classList.remove('inactive');
+            afterContent.classList.add('inactive');
         } else {
             // Show After state
             afterBtn.classList.add('active');
             beforeBtn.classList.remove('active');
-            afterContent.classList.remove('hidden');
-            beforeContent.classList.add('hidden');
+            afterContent.classList.remove('inactive');
+            beforeContent.classList.add('inactive');
         }
     }
 
     // Start the automatic toggle
-    const toggleIntervalId = setInterval(toggleBeforeAfter, toggleInterval);
+    let autoToggleId = setInterval(toggleBeforeAfter, toggleInterval);
+
+    function restartAutoToggle() {
+        clearInterval(autoToggleId);
+        autoToggleId = setInterval(toggleBeforeAfter, toggleInterval);
+    }
+
+    // Allow manual click toggling (pauses auto-toggle briefly)
+    function manualToggle(showBefore) {
+        isBefore = showBefore;
+        if (isBefore) {
+            beforeBtn.classList.add('active');
+            afterBtn.classList.remove('active');
+            beforeContent.classList.remove('inactive');
+            afterContent.classList.add('inactive');
+        } else {
+            afterBtn.classList.add('active');
+            beforeBtn.classList.remove('active');
+            afterContent.classList.remove('inactive');
+            beforeContent.classList.add('inactive');
+        }
+        // Pause auto-toggle for 5 seconds after manual interaction, then restart
+        clearInterval(autoToggleId);
+        setTimeout(restartAutoToggle, 5000);
+    }
+
+    beforeBtn.addEventListener('click', () => manualToggle(true));
+    afterBtn.addEventListener('click', () => manualToggle(false));
 
     // Respect reduced motion for toggle
     if (motionQuery.matches) {
         // If reduced motion is preferred, remove the interval
-        clearInterval(toggleIntervalId);
+        clearInterval(autoToggleId);
     }
 })();
