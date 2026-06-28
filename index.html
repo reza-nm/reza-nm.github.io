@@ -94,40 +94,46 @@
                         <a href="#work" class="rounded-full border border-hairline text-cream px-8 py-3 font-medium hover:bg-cream/5 transition">See My Recent Projects →</a>
                     </div>
                 </div>
-                <!-- Laptop illustration -->
+                <!-- Before/After Browser Toggle -->
                 <div class="mt-20 relative mx-auto max-w-md opacity-0 animate-fade-up" style="animation-delay: 0.5s;">
-                    <div class="bg-forest2 rounded-xl border border-hairlineDark shadow-2xl p-2">
-                        <div class="flex items-center gap-1.5 px-3 py-2">
-                            <span class="w-3 h-3 rounded-full bg-red-400"></span>
-                            <span class="w-3 h-3 rounded-full bg-yellow-400"></span>
-                            <span class="w-3 h-3 rounded-full bg-green-400"></span>
-                        </div>
-                        <div class="bg-forest rounded-lg p-4">
-                            <div class="flex items-start gap-3 mb-3">
-                                <div class="w-10 h-10 rounded-full bg-sage flex items-center justify-center text-cream text-sm font-display">RN</div>
-                                <div class="bg-paper/10 rounded-2xl rounded-tl-none p-3 text-left">
-                                    <p class="text-cream text-sm">Hey! I saw your work — can we chat about a new website for my bakery?</p>
-                                </div>
+                    <div id="before-after-card" class="bg-forest2 rounded-2xl border border-hairlineDark shadow-2xl p-4 w-full max-w-sm">
+                        <!-- Browser Chrome -->
+                        <div class="flex items-center justify-between mb-4">
+                            <div class="flex items-center gap-1.5">
+                                <span class="w-3 h-3 rounded-full bg-red-400"></span>
+                                <span class="w-3 h-3 rounded-full bg-yellow-400"></span>
+                                <span class="w-3 h-3 rounded-full bg-green-400"></span>
                             </div>
-                            <div class="flex justify-end">
-                                <div class="bg-gold/20 rounded-2xl rounded-br-none p-3 max-w-[80%] text-left">
-                                    <p class="text-cream text-sm">Absolutely! Let's find a time that works. 🙂</p>
+                            <div class="flex-1 mx-4">
+                                <div class="bg-forest/50 rounded-full px-3 py-1 text-xs text-cream/80 flex items-center justify-center gap-1">
+                                    <span>🌐</span>
+                                    <span>yourbusiness.com</span>
                                 </div>
                             </div>
                         </div>
-                    </div>
-                    <!-- Floating notification cards -->
-                    <div class="floating-card absolute -top-10 -right-12 bg-cream/90 backdrop-blur-sm rounded-xl border border-hairline p-3 shadow-lg max-w-[180px] text-left animate-float" style="animation-delay: 1s;">
-                        <p class="text-xs font-medium text-forest">📩 New inquiry</p>
-                        <p class="text-xs text-inkdim">“Can I book a visit?”</p>
-                    </div>
-                    <div class="floating-card absolute -bottom-6 -left-10 bg-cream/90 backdrop-blur-sm rounded-xl border border-hairline p-3 shadow-lg max-w-[160px] text-left animate-float" style="animation-delay: 1.3s;">
-                        <p class="text-xs font-medium text-forest">⭐ New 5-star review</p>
-                        <p class="text-xs text-inkdim">“Absolutely loved the new design!”</p>
-                    </div>
-                    <div class="floating-card absolute top-1/2 -right-16 bg-cream/90 backdrop-blur-sm rounded-xl border border-hairline p-3 shadow-lg max-w-[180px] text-left animate-float" style="animation-delay: 1.6s;">
-                        <p class="text-xs font-medium text-forest">📅 Booking confirmed</p>
-                        <p class="text-xs text-inkdim">Thursday, 3 PM</p>
+
+                        <!-- Toggle Buttons -->
+                        <div class="flex gap-2 mb-6">
+                            <button id="before-btn" class="before-after-btn flex-1 rounded-full text-cream/80 py-2 px-4 text-sm font-medium transition-all">Before</button>
+                            <button id="after-btn" class="before-after-btn flex-1 rounded-full text-cream/80 hover:text-cream py-2 px-4 text-sm font-medium transition-all">After</button>
+                        </div>
+
+                        <!-- Content Area -->
+                        <div id="before-content" class="before-after-content">
+                            <ul class="space-y-3 text-sm">
+                                <li class="flex items-center gap-2"><span class="text-coral">✕</span><span class="text-cream/90">Hard to trust</span></li>
+                                <li class="flex items-center gap-2"><span class="text-coral">✕</span><span class="text-cream/90">Visitors leave confused</span></li>
+                                <li class="flex items-center gap-2"><span class="text-coral">✕</span><span class="text-cream/90">Revenue left on the table</span></li>
+                            </ul>
+                        </div>
+
+                        <div id="after-content" class="before-after-content hidden">
+                            <ul class="space-y-3 text-sm">
+                                <li class="flex items-center gap-2"><span class="text-gold">✓</span><span class="text-cream font-medium">Easy to trust</span></li>
+                                <li class="flex items-center gap-2"><span class="text-gold">✓</span><span class="text-cream font-medium">Customer likes it</span></li>
+                                <li class="flex items-center gap-2"><span class="text-gold">✓</span><span class="text-cream font-medium">Gets more revenue</span></li>
+                            </ul>
+                        </div>
                     </div>
                 </div>
             </div>

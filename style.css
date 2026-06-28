@@ -141,3 +141,76 @@ body {
         transition: none;
     }
 }
+
+/* ===== Before/After Toggle ===== */
+.before-after-card {
+    box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.4);
+}
+
+.before-after-btn {
+    border: 2px solid transparent;
+    background: transparent;
+    color: #F4EFE2;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    position: relative;
+    overflow: hidden;
+    font-weight: 500;
+}
+
+/* Button active state animations */
+.before-after-btn.active {
+    animation: btnFillActive 0.4s ease-out forwards;
+    color: #142420;
+}
+
+.before-after-btn:not(.active) {
+    animation: btnFillInactive 0.4s ease-out forwards;
+}
+
+@keyframes btnFillActive {
+    0% {
+        background: transparent;
+        box-shadow: none;
+    }
+    100% {
+        background: linear-gradient(135deg, #C99A2E 0%, #AC7F22 100%);
+        box-shadow: 0 4px 15px rgba(201, 154, 46, 0.3);
+    }
+}
+
+@keyframes btnFillInactive {
+    0% {
+        background: linear-gradient(135deg, #C99A2E 0%, #AC7F22 100%);
+        box-shadow: 0 4px 15px rgba(201, 154, 46, 0.3);
+    }
+    100% {
+        background: transparent;
+        box-shadow: none;
+    }
+}
+
+.before-after-btn:not(.active):hover {
+    background: rgba(201, 154, 46, 0.1);
+    color: #FFF;
+}
+
+.before-after-content {
+    transition: opacity 0.3s cubic-bezier(0.4, 0, 0.2, 1), transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.before-after-content.hidden {
+    opacity: 0;
+    transform: translateY(-8px);
+}
+
+.before-after-content:not(.hidden) {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Reduced motion for toggle */
+.reduce-motion .before-after-btn,
+.reduce-motion .before-after-content {
+    transition: none !important;
+    animation: none !important;
+}

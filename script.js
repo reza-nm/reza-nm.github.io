@@ -177,4 +177,41 @@
 
     // ===== Re-init lucide after dynamic changes =====
     setTimeout(() => lucide.createIcons(), 100);
+
+    // ===== Before/After Toggle Animation =====
+    const beforeBtn = document.getElementById('before-btn');
+    const afterBtn = document.getElementById('after-btn');
+    const beforeContent = document.getElementById('before-content');
+    const afterContent = document.getElementById('after-content');
+    const beforeAfterCard = document.getElementById('before-after-card');
+
+    let isBefore = true;
+    const toggleInterval = 2000; // 2000ms
+
+    function toggleBeforeAfter() {
+        isBefore = !isBefore;
+
+        if (isBefore) {
+            // Show Before state
+            beforeBtn.classList.add('active');
+            afterBtn.classList.remove('active');
+            beforeContent.classList.remove('hidden');
+            afterContent.classList.add('hidden');
+        } else {
+            // Show After state
+            afterBtn.classList.add('active');
+            beforeBtn.classList.remove('active');
+            afterContent.classList.remove('hidden');
+            beforeContent.classList.add('hidden');
+        }
+    }
+
+    // Start the automatic toggle
+    const toggleIntervalId = setInterval(toggleBeforeAfter, toggleInterval);
+
+    // Respect reduced motion for toggle
+    if (motionQuery.matches) {
+        // If reduced motion is preferred, remove the interval
+        clearInterval(toggleIntervalId);
+    }
 })();
