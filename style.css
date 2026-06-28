@@ -1,0 +1,143 @@
+/* style.css */
+/* ===== Base resets & safety ===== */
+html, body {
+    overflow-x: hidden;
+}
+
+body {
+    margin: 0;
+}
+
+/* ===== Animations ===== */
+@keyframes fade-up {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.animate-fade-up {
+    animation: fade-up 0.6s ease forwards;
+    opacity: 0; /* start hidden, animation fills */
+}
+
+@keyframes float {
+    0%, 100% {
+        transform: translateY(0) rotate(0deg);
+    }
+    50% {
+        transform: translateY(-8px) rotate(1deg);
+    }
+}
+
+.animate-float {
+    animation: float 6s ease-in-out infinite;
+}
+
+@keyframes blob-move {
+    0% {
+        transform: translate(0, 0) scale(1);
+    }
+    50% {
+        transform: translate(30px, -40px) scale(1.05);
+    }
+    100% {
+        transform: translate(-20px, 20px) scale(0.95);
+    }
+}
+
+.blob {
+    animation: blob-move 25s ease-in-out infinite alternate;
+}
+
+.blob-1 {
+    top: -10%;
+    left: -10%;
+    animation-duration: 22s;
+}
+
+.blob-2 {
+    bottom: -10%;
+    right: -10%;
+    animation-duration: 28s;
+}
+
+/* ===== Reveal on scroll ===== */
+.reveal {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.7s ease, transform 0.7s ease;
+}
+
+.reveal.revealed {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* ===== Card hover ===== */
+.card-hover:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 12px 30px -8px rgba(0,0,0,0.08);
+}
+
+/* ===== Marquee ===== */
+.marquee-container {
+    mask-image: linear-gradient(to right, transparent, black 15%, black 85%, transparent);
+    -webkit-mask-image: linear-gradient(to right, transparent, black 15%, black 85%, transparent);
+}
+
+.animate-marquee {
+    animation: marquee 30s linear infinite;
+    will-change: transform;
+}
+
+@keyframes marquee {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(-50%); }
+}
+
+/* ===== Process timeline ===== */
+.process-timeline .transition-height {
+    transition: height 0.1s linear;
+}
+
+/* ===== FAQ accordion ===== */
+.faq-answer {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.35s ease;
+}
+
+.faq-item.open .faq-answer {
+    max-height: 200px; /* enough for short answers */
+}
+
+.faq-item.open .faq-question i {
+    transform: rotate(45deg);
+}
+
+/* ===== Reduced motion ===== */
+@media (prefers-reduced-motion: reduce) {
+    .animate-fade-up,
+    .animate-float,
+    .blob,
+    .reveal,
+    .card-hover,
+    .marquee-container .animate-marquee,
+    .process-timeline .transition-height {
+        animation: none !important;
+        transition: none !important;
+        transform: none !important;
+    }
+    .reveal {
+        opacity: 1;
+        transform: none;
+    }
+    .faq-answer {
+        transition: none;
+    }
+}
