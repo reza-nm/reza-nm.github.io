@@ -20362,11 +20362,11 @@ function ol() {
             "mt-12 flex flex-col gap-2 border-t border-hairlineDark pt-6 text-xs text-creamdim sm:flex-row sm:items-center sm:justify-between",
           children: [
             (0, c.jsxs)("span", {
-              children: ["© 2026 ", a1, ". Designed with care."],
+              children: ["© 2026 ", a1, ""],
             }),
             (0, c.jsx)("span", {
               children:
-                "Educational portfolio — case studies are redesign concepts.",
+                "",
             }),
           ],
         }),
@@ -21521,7 +21521,7 @@ function o2() {
             (0, c.jsx)("p", {
               className: "mt-3 max-w-xl text-sm text-inkdim",
               children:
-                "These are educational redesigns, not paid client work — built to show how I think through real design problems.",
+                "These redesigns are built to show how I think through the design problems.",
             }),
           ],
         }),
