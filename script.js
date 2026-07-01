@@ -19895,8 +19895,8 @@ let aX = (0, d.createContext)({}),
     ["path", { d: "M4 19h16", key: "1djgab" }],
   ]),
   a1 = "Reza Narimani",
-  a2 = "hello@rezanarimani.dev",
-  a3 = "https://wa.me/989120047731",
+  a2 = "namireza.com@gmail.com",
+  a3 = "https://wa.me/989396006241",
   a4 = "https://linkedin.com/in/rezanarimani",
   a5 = "https://calendly.com/rezanarimani/intro-call",
   a6 = [
@@ -20946,7 +20946,7 @@ function o$() {
                   transition: { duration: 0.45, delay: 0.05 },
                   className:
                     "text-xs font-semibold uppercase tracking-[0.18em] text-gold",
-                  children: "For small businesses & personal brands",
+                  children: "",
                 }),
                 (0, c.jsx)(aY.h1, {
                   initial: { opacity: 0, y: 16 },
@@ -20984,7 +20984,7 @@ function o$() {
                       href: "#contact",
                       className:
                         "rounded-full bg-gold px-7 py-3 font-medium text-forest transition-colors hover:bg-gold2",
-                      children: "Request a Free Homepage Audit/Mockup",
+                      children: "Get in touch",
                     }),
                     (0, c.jsx)("a", {
                       href: "#work",
@@ -20999,7 +20999,6 @@ function o$() {
                   animate: { opacity: 1 },
                   transition: { duration: 0.5, delay: 0.5 },
                   className: "mt-3 text-xs text-creamdim/80",
-                  children: "Delivered within 24 hours.",
                 }),
               ],
             }),
