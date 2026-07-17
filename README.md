@@ -1,28 +1,4 @@
-# Reza Narimani — Portfolio (plain HTML/CSS/JS)
-
-No build step. No npm install. Just static files — works directly on GitHub Pages.
-
-## How to run it locally
-
-You can just double-click `index.html` to open it in a browser. For the smoothest
-experience (so relative paths behave exactly like they will on GitHub Pages), run
-a tiny local server instead:
-
-```bash
-# Python (already on most machines)
-python3 -m http.server 8000
-# then open http://localhost:8000
-```
-
-or with VS Code's "Live Server" extension — right-click `index.html` → "Open with Live Server".
-
-## How to deploy to GitHub Pages
-
-1. Push this whole folder to a GitHub repo.
-2. Repo Settings → Pages → set source to your main branch, root folder.
-3. Done — no build step, no Actions workflow needed.
-
-## Project structure
+ Project structure
 
 ```
 index.html        ← the entire page, one file, sections marked with HTML comments
@@ -39,7 +15,7 @@ Styling uses the **Tailwind CDN build** (loaded via `<script>` in `index.html`,
 no compiler needed) with a small inline config for the site's custom colors and
 fonts — that config block is right under the Tailwind `<script>` tag.
 
-## How to edit things
+ How to edit things
 
 - **Any text, heading, or paragraph:** open `index.html`, find the section (they're
   marked with big `<!-- ===== SECTION NAME ===== -->` comments), and edit the text
