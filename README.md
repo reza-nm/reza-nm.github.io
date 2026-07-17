@@ -1,17 +1,9 @@
-# Reza Narimani — Portfolio Site
-
-Clean, component-based rebuild of your portfolio site. Same design, same content,
-same animations — just organized so it's easy to read and change.
-
-## Getting started
+Getting started
 
 ```bash
 npm install
 npm run dev
 ```
-
-Then open the local URL Vite prints (usually http://localhost:5173).
-
 To build for production:
 
 ```bash
@@ -20,7 +12,7 @@ npm run build
 
 The output goes to `dist/`, which you can deploy anywhere static (Vercel, Netlify, etc).
 
-## Project structure
+ Project structure
 
 ```
 src/
@@ -51,7 +43,7 @@ src/
 tailwind.config.js       ← all custom colors + fonts live here
 ```
 
-## How to make common edits
+How to make common edits
 
 - **Change any text, link, or list item:** edit `src/data/siteData.js`. Nothing
   else needs to change.
