@@ -1,0 +1,69 @@
+/* ============================================================
+   CUSTOM CSS
+   Only things Tailwind's CDN build can't do: keyframe animations.
+   Everything else (colors, spacing, layout) is Tailwind utility
+   classes directly in index.html.
+   ============================================================ */
+
+html {
+  scroll-behavior: smooth;
+}
+
+/* ---- Industries marquee (infinite horizontal scroll) ---- */
+@keyframes marquee {
+  from { transform: translateX(0); }
+  to { transform: translateX(-50%); }
+}
+.animate-marquee {
+  animation: marquee 28s linear infinite;
+}
+
+/* ---- Hero background glow blobs (slow drifting motion) ---- */
+@keyframes drift-a {
+  0%, 100% { transform: translate(0, 0); }
+  50% { transform: translate(24px, 30px); }
+}
+@keyframes drift-b {
+  0%, 100% { transform: translate(0, 0); }
+  50% { transform: translate(-20px, -24px); }
+}
+.glow-blob-1 { animation: drift-a 22s ease-in-out infinite; }
+.glow-blob-2 { animation: drift-b 24s ease-in-out infinite; }
+
+/* ---- Hero floating notification chips (fade + rise in once) ---- */
+@keyframes float-chip-in {
+  from { opacity: 0; transform: translateY(8px) scale(0.9); }
+  to { opacity: 1; transform: translateY(0) scale(1); }
+}
+.float-chip {
+  opacity: 0;
+  animation: float-chip-in 0.45s ease-out forwards;
+}
+
+/* ---- Scroll-reveal: fade + rise up as sections enter the viewport ----
+   Toggled by js/reveal.js using an IntersectionObserver.
+   Add the "reveal" class to any element you want animated in. */
+.reveal {
+  opacity: 0;
+  transform: translateY(18px);
+  transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+.reveal.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Respect users who prefer reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  .animate-marquee,
+  .glow-blob-1,
+  .glow-blob-2,
+  .float-chip {
+    animation: none !important;
+  }
+  .reveal {
+    opacity: 1 !important;
+    transform: none !important;
+    transition: none !important;
+  }
+}
