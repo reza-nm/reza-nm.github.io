@@ -9,6 +9,7 @@ js/
   faq.js           ← FAQ accordion (click to expand/collapse)
   process.js       ← gold progress line on the "How it works" timeline
   reveal.js        ← fade-in-on-scroll for sections (IntersectionObserver)
+  float.js         ← floating "Reach me" button + quick-contact popover
 ```
 
 Styling uses the **Tailwind CDN build** (loaded via `<script>` in `index.html`,

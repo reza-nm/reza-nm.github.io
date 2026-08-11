@@ -1,13 +1,15 @@
 // ============================================================
-// PROCESS: the gold vertical line fills in as you scroll through
-// the 6-step timeline.
+// PROCESS: the gold line fills in as you scroll through the
+// 3-step process. Vertical rail on mobile (#process-line),
+// horizontal track on desktop (#process-line-h).
 // ============================================================
 
 const processSection = document.getElementById("process");
 const processLine = document.getElementById("process-line");
+const processLineH = document.getElementById("process-line-h");
 
-function updateProcessLine() {
-  if (!processSection || !processLine) return;
+function updateProcessLines() {
+  if (!processSection) return;
 
   const rect = processSection.getBoundingClientRect();
   const viewportHeight = window.innerHeight;
@@ -19,9 +21,10 @@ function updateProcessLine() {
   const raw = (start - rect.top) / (start - end);
   const progress = Math.min(1, Math.max(0, raw));
 
-  processLine.style.height = `${progress * 100}%`;
+  if (processLine) processLine.style.height = `${progress * 100}%`;
+  if (processLineH) processLineH.style.width = `${progress * 100}%`;
 }
 
-window.addEventListener("scroll", updateProcessLine);
-window.addEventListener("resize", updateProcessLine);
-updateProcessLine();
+window.addEventListener("scroll", updateProcessLines, { passive: true });
+window.addEventListener("resize", updateProcessLines);
+updateProcessLines();

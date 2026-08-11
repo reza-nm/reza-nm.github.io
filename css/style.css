@@ -40,6 +40,65 @@ html {
   animation: float-chip-in 0.45s ease-out forwards;
 }
 
+/* ---- Floating "Reach me" beacon (pulsing ring behind the button) ---- */
+@keyframes float-pulse {
+  0% { transform: scale(1); opacity: 0.45; }
+  70% { transform: scale(1.6); opacity: 0; }
+  100% { transform: scale(1.6); opacity: 0; }
+}
+.float-beacon::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: 9999px;
+  background: rgba(201, 154, 46, 0.55);
+  animation: float-pulse 2.6s ease-out infinite;
+}
+
+/* ---- Quick-contact popover (scale + fade in/out) ---- */
+.float-popover {
+  opacity: 0;
+  transform: translateY(10px) scale(0.96);
+  transform-origin: bottom right;
+  pointer-events: none;
+  transition: opacity 0.22s ease-out, transform 0.22s ease-out;
+}
+.float-popover.is-open {
+  opacity: 1;
+  transform: translateY(0) scale(1);
+  pointer-events: auto;
+}
+
+/* ---- Floating widget (button + popover): animated show/hide ---- */
+#float-cta {
+  opacity: 0;
+  transform: translateY(16px) scale(0.9);
+  transform-origin: bottom right;
+  pointer-events: none;
+  visibility: hidden;
+  transition: opacity 0.3s ease-out, transform 0.3s ease-out,
+    visibility 0s linear 0.3s;
+}
+#float-cta.is-visible {
+  opacity: 1;
+  transform: translateY(0) scale(1);
+  pointer-events: auto;
+  visibility: visible;
+  transition: opacity 0.3s ease-out, transform 0.3s ease-out, visibility 0s;
+}
+
+/* ---- Horizontal swipe-snap rows for the interlocking mobile layouts ---- */
+.snap-row {
+  scroll-snap-type: x mandatory;
+  -webkit-overflow-scrolling: touch;
+}
+.snap-row > * {
+  scroll-snap-align: start;
+}
+.snap-row::-webkit-scrollbar {
+  display: none;
+}
+
 /* ---- Scroll-reveal: fade + rise up as sections enter the viewport ----
    Toggled by js/reveal.js using an IntersectionObserver.
    Add the "reveal" class to any element you want animated in. */
@@ -58,8 +117,21 @@ html {
   .animate-marquee,
   .glow-blob-1,
   .glow-blob-2,
-  .float-chip {
+  .float-chip,
+  .float-beacon::after {
     animation: none !important;
+  }
+  .float-popover {
+    transition: none !important;
+  }
+  #float-cta {
+    transition: none !important;
+  }
+  #float-cta.is-visible {
+    transition: none !important;
+    opacity: 1 !important;
+    transform: none !important;
+    visibility: visible !important;
   }
   .reveal {
     opacity: 1 !important;
